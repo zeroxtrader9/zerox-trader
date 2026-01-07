@@ -7,66 +7,144 @@
 
 <style>
 body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#0b1c2d;
-  color:white;
-  text-align:center;
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:radial-gradient(circle at top,#1a2a3a,#000);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
 }
-.container{
-  max-width:400px;
-  margin:auto;
-  padding:30px 15px;
+
+/* Glass Card */
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:35px 30px;
+    text-align:center;
+    width:90%;
+    max-width:420px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.6);
+    animation:float 4s ease-in-out infinite;
 }
-img{
-  width:250px;
-  border-radius:20px;
-  margin-bottom:20px;
+
+/* Card Floating */
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
 }
-h1{margin:10px 0;}
-p{color:#cbd5e1;}
+
+/* Logo Pulse */
+.logo{
+    width:130px;
+    border-radius:30px;
+    margin-bottom:15px;
+    animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.07);}
+    100%{transform:scale(1);}
+}
+
+h1{
+    font-size:28px;
+    margin:10px 0;
+    letter-spacing:1px;
+}
+
+p{
+    font-size:14px;
+    opacity:.85;
+}
+
+/* Buttons */
 .btn{
-  display:block;
-  margin:15px auto;
-  padding:14px;
-  width:85%;
-  font-size:18px;
-  font-weight:bold;
-  text-decoration:none;
-  color:white;
-  border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px;
+    margin:18px 0;
+    border-radius:14px;
+    font-size:18px;
+    font-weight:700;
+    text-decoration:none;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
 }
-.download{background:#22c55e;}
-.telegram{background:#0ea5e9;}
+
+/* Shine effect */
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+    transition:.6s;
+}
+
+.btn:hover::before{
+    left:100%;
+}
+
+.download{
+    background:linear-gradient(135deg,#00ff9d,#00c853);
+    color:#000;
+    box-shadow:0 0 25px rgba(0,255,160,.6);
+}
+
+.telegram{
+    background:linear-gradient(135deg,#2aabee,#229ED9);
+    color:#fff;
+    box-shadow:0 0 25px rgba(42,171,238,.6);
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+footer{
+    font-size:12px;
+    opacity:.6;
+    margin-top:10px;
+}
 </style>
 </head>
 
 <body>
-<div class="container">
 
-<img src="app.jpg" alt="Rummy Games VIP">
+<div class="card">
 
-<h1>Rummy Games VIP</h1>
-<p>Official Download • 100% Safe • Fast Withdraw</p>
+    <!-- LOGO -->
+    <img src="logo.png" class="logo" alt="Rummy Games VIP">
 
-<!-- DOWNLOAD BUTTON -->
-<a class="btn download"
-href="https://rummygemsvip.in/?from_gameid=30549885&channelCode=30549626"
-target="_blank">
-⬇ Download App
-</a>
+    <h1>Rummy Games VIP</h1>
+    <p>Official Download • 100% Safe • Fast Withdraw</p>
 
-<!-- TELEGRAM BUTTON -->
-<a class="btn telegram"
-href="https://t.me/zeroxprediction1"
-target="_blank">
-📲 Join Telegram
-</a>
+    <!-- DOWNLOAD -->
+    <a class="btn download"
+       href="https://rummygemsvip.in/?from_gameid=30549885&channelCode=30549626"
+       target="_blank">
+       ⬇ Download App
+    </a>
 
-<p style="font-size:13px;margin-top:30px;">
-© 2026 All Rights Reserved
-</p>
+    <!-- TELEGRAM -->
+    <a class="btn telegram"
+       href="https://t.me/zeroxprediction1"
+       target="_blank">
+       📢 Join Telegram
+    </a>
+
+    <footer>© 2026 All Rights Reserved</footer>
 
 </div>
+
 </body>
 </html>
